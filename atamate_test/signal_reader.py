@@ -38,7 +38,7 @@ def _handle_message(message: bytes) -> str:
     """
     # only bytes-like objects can be unpacked by struct.unpack
     if not isinstance(message, bytes):
-        return f'Expected bytes, got {type} instead'
+        return f'Expected bytes, got {type(message)} instead'
 
     # if first part of the messages is malformed, including lack of board id, return error
     try:
